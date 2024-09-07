@@ -10,13 +10,19 @@ pkgs.mkShell {
         pkgs.rustup
         pkgs.wget        
         pkgs.oh-my-zsh
+        pkgs.sqlite
+        pkgs.gcc
+        pkgs.pkg-config
     ];
     
     shellHook = ''
-        if [ -f ~/.zshrc ]; then
-            zsh
-            source ~/.zshrc
+        if [ -n "$ZSH_VERSION" ]; then
+            echo "launching zsh"
+        else
+            exec zsh
         fi
-        echo "you're all set! don't break anything today"
+        export CGO_CFLAGS="-I${pkgs.sqlite.dev}/include"
+        export CGO_LDFLAGS="-L${pkgs.sqlite.dev}/lib"
+        export GOFLAGS="-tags=sqlite_omit_load_extension,libsqlite3"
     '';
 }
