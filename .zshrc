@@ -14,6 +14,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Fixes broken dependency issue in go-sqlite
 export GOFLAGS="-tags=sqlite_omit_load_extension,libsqlite3"
+export PATH=$PATH:$(go env GOPATH)/bin
 
 alias nsh="nix-shell ~/env/default.nix"
 
