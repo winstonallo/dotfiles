@@ -16,7 +16,9 @@ source $ZSH/oh-my-zsh.sh
 export GOFLAGS="-tags=sqlite_omit_load_extension,libsqlite3"
 export PATH=$PATH:$(go env GOPATH)/bin
 
+alias gcl="git -c http.sslVerify=false clone"
 alias nsh="nix-shell ~/env/default.nix"
+alias ni="nix-env -iA"
 
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
     . ~/.nix-profile/etc/profile.d/nix.sh

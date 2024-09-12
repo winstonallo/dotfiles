@@ -4,6 +4,7 @@ pkgs.mkShell {
     buildInputs = [
         pkgs.docker
         pkgs.git
+        pkgs.neovim
         pkgs.cargo
         pkgs.zsh
         pkgs.go
