@@ -17,17 +17,4 @@ export GOFLAGS="-tags=sqlite_omit_load_extension,libsqlite3"
 export PATH=$PATH:$(go env GOPATH)/bin
 
 alias gcl="git -c http.sslVerify=false clone"
-alias nsh="nix-shell ~/env/default.nix"
-alias ni="nix-env -iA"
 
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-    . ~/.nix-profile/etc/profile.d/nix.sh
-fi
-
-# Starts default nix-shell 
-if [ -z "$IN_NIX_SHELL" ]; then
-    echo "starting nix-shell.."
-    nix-shell ~/.config/default.nix
-fi
-
-if [ -e /home/winstonallo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/winstonallo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
