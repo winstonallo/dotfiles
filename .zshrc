@@ -25,7 +25,7 @@ fi
 # Starts default nix-shell 
 if [ -z "$IN_NIX_SHELL" ]; then
     echo "starting nix-shell.."
-    nix-shell ~/env/default.nix
+    nix-shell ~/.config/default.nix
 fi
 
 if [ -e /home/winstonallo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/winstonallo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
