@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install -y zsh
+sudo apt install -y zsh git
 
 if [ ! -f ~/.ssh/id_ed25519 ]; then
   ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ""
