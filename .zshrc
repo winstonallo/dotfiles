@@ -12,9 +12,10 @@ zstyle ':omz:plugins:alias-finder' cheaper yes
 
 source $ZSH/oh-my-zsh.sh
 
-# Fixes broken dependency issue in go-sqlite
-export GOFLAGS="-tags=sqlite_omit_load_extension,libsqlite3"
-export PATH=$PATH:$(go env GOPATH)/bin
-
 alias gcl="git -c http.sslVerify=false clone"
 
+export PATH="$PATH:/home/arthur/.cargo/bin"
+export PATH="$PATH:/usr/local/go/bin"
+
+# Binaries installed with pip
+export PATH="$PATH:/home/arthur/.local/bin/"
