@@ -16,6 +16,7 @@ alias gcl="git -c http.sslVerify=false clone"
 
 export PATH="$PATH:/home/arthur/.cargo/bin"
 export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:/opt/homebrew/bin"
 
 # Binaries installed with pip
 export PATH="$PATH:/home/arthur/.local/bin/"
