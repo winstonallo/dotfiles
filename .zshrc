@@ -12,11 +12,8 @@ zstyle ':omz:plugins:alias-finder' cheaper yes
 
 source $ZSH/oh-my-zsh.sh
 
-alias gcl="git -c http.sslVerify=false clone"
+alias k=kubectl
 
-export PATH="$PATH:/home/arthur/.cargo/bin"
-export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:/opt/homebrew/bin"
-
-# Binaries installed with pip
-export PATH="$PATH:/home/arthur/.local/bin/"
+git config --global user.signingkey ~/.ssh/id_ed25519
+git config --global commit.gpgsign true
+git config --global gpg.format ssh
