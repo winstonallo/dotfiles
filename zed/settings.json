@@ -1,80 +1,158 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
 {
-    "features": {
-        "edit_prediction_provider": "none"
-    },
-    "collaboration_panel": {
-        "dock": "right"
-    },
-    "outline_panel": {
-        "dock": "right"
-    },
-    "git_panel": {
-        "dock": "right"
-    },
-    "project_panel": {
-        "dock": "right"
-    },
-    "ssh_connections": [],
-    "diagnostics": {
-        "button": true,
-        "include_warnings": true,
-        "inline": {
-            "enabled": true,
-            "update_debounce_ms": 150,
-            "padding": 4,
-            "min_column": 0
-        }
-    },
-    "lsp": {
-        "rust-analyzer": {
-            "binary": {
-                "ignore_system_version": false
-            },
-            "enable_lsp_tasks": true,
-            "initialization_options": {
-                "checkOnSave": true
-            }
-        }
-    },
-    "tab_size": 4,
-    "autosave": "on_focus_change",
-    "agent": {
-        "always_allow_tool_actions": true,
-        "default_profile": "write",
-        "inline_assistant_model": null,
-        "enabled": true
-    },
-    "format_on_save": "on",
-    "file_types": {
-        "C": ["c", "h"]
-    },
-    "languages": {
-        "TypeScript": {
-            "language_servers": ["eslint"]
-        },
-        "C": {
-            "tab_size": 4,
-            "formatter": {
-                "external": {
-                    "command": "clang-format",
-                    "arguments": [
-                        "--style=file",
-                        "--assume-filename={buffer_path}"
-                    ]
-                }
-            },
-            "format_on_save": "on"
-        },
-        "PHP": {
-            "format_on_save": "off"
-        }
-    },
-    "vim_mode": true,
-    "ui_font_size": 16,
-    "buffer_font_size": 14,
-    "theme": {
-        "mode": "system",
-        "light": "One Light",
-        "dark": "One Dark"
-    }
+	"features": {
+		"edit_prediction_provider": "none"
+	},
+	"collaboration_panel": {
+		"dock": "right"
+	},
+	"outline_panel": {
+		"dock": "right"
+	},
+	"git_panel": {
+		"dock": "right"
+	},
+	"project_panel": {
+		"dock": "right"
+	},
+	"ssh_connections": [
+		{
+			"host": "winstonallo-89.58.63.247",
+			"projects": [
+				{
+					"paths": ["/home/winstonallo"]
+				},
+				{
+					"paths": ["/home/winstonallo/NeMo-Guardrails"]
+				},
+				{
+					"paths": ["/home/winstonallo/asd"]
+				},
+				{
+					"paths": ["/home/winstonallo/asdadsasd"]
+				},
+				{
+					"paths": ["/home/winstonallo/blog"]
+				},
+				{
+					"paths": ["/home/winstonallo/ft_shield"]
+				},
+				{
+					"paths": ["/home/winstonallo/horsemen"]
+				},
+				{
+					"paths": ["/home/winstonallo/mastery/ft_ssl"]
+				},
+				{
+					"paths": ["/home/winstonallo/mastery/kfs"]
+				},
+				{
+					"paths": ["/home/winstonallo/mastery/taskmaster"]
+				},
+				{
+					"paths": ["/home/winstonallo/ostep-homework"]
+				},
+				{
+					"paths": ["/home/winstonallo/qms"]
+				},
+				{
+					"paths": ["/home/winstonallo/qms/src/wasm"]
+				},
+				{
+					"paths": ["/home/winstonallo/rust"]
+				},
+				{
+					"paths": ["/home/winstonallo/sha3"]
+				},
+				{
+					"paths": ["/home/winstonallo/sha3/wasm/wasm-rs"]
+				},
+				{
+					"paths": ["/home/winstonallo/uv"]
+				},
+				{
+					"paths": ["/home/winstonallo/woody-woodpacker"]
+				}
+			]
+		}
+	],
+	"diagnostics": {
+		"button": true,
+		"include_warnings": true,
+		"inline": {
+			"enabled": true,
+			"update_debounce_ms": 150,
+			"padding": 4,
+			"min_column": 0
+		}
+	},
+	"lsp": {
+		"rust-analyzer": {
+			"binary": {
+				"ignore_system_version": false
+			},
+			"enable_lsp_tasks": true,
+			"initialization_options": {
+				"checkOnSave": true
+			}
+		}
+	},
+	"tab_size": 4,
+	"autosave": "on_focus_change",
+	"agent": {
+		"always_allow_tool_actions": true,
+		"default_profile": "ask",
+		"inline_assistant_model": null,
+		"enabled": true
+	},
+	"format_on_save": "on",
+	"file_types": {
+		"C": ["c", "h"]
+	},
+	"languages": {
+		"TypeScript": {
+			"language_servers": ["eslint"]
+		},
+		"C": {
+			"tab_size": 4,
+			"formatter": {
+				"external": {
+					"command": "clang-format",
+					"arguments": [
+						"--style=file",
+						"--assume-filename={buffer_path}"
+					]
+				}
+			},
+			"format_on_save": "on"
+		},
+
+		"PHP": {
+			"hard_tabs": true
+		},
+		"CSS": {
+			"hard_tabs": true,
+			"format_on_save": "off"
+		},
+		"JavaScript": {
+			"hard_tabs": true,
+			"format_on_save": "on"
+		}
+	},
+	"hard_tabs": true,
+	"vim_mode": true,
+	"ui_font_size": 13,
+	"buffer_font_size": 12,
+	"theme": {
+		"mode": "system",
+		"light": "One Light",
+		"dark": "One Dark"
+	}
 }
