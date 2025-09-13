@@ -17,3 +17,6 @@ alias k=kubectl
 git config --global user.signingkey ~/.ssh/id_ed25519
 git config --global commit.gpgsign true
 git config --global gpg.format ssh
+
+export UID=$(id -u $USER)
+export GID=$(id -g $USER)
