@@ -14,67 +14,7 @@
 	"project_panel": {
 		"dock": "right"
 	},
-	"ssh_connections": [
-		{
-			"host": "winstonallo-89.58.63.247",
-			"projects": [
-				{
-					"paths": ["/home/winstonallo"]
-				},
-				{
-					"paths": ["/home/winstonallo/NeMo-Guardrails"]
-				},
-				{
-					"paths": ["/home/winstonallo/asd"]
-				},
-				{
-					"paths": ["/home/winstonallo/asdadsasd"]
-				},
-				{
-					"paths": ["/home/winstonallo/blog"]
-				},
-				{
-					"paths": ["/home/winstonallo/ft_shield"]
-				},
-				{
-					"paths": ["/home/winstonallo/horsemen"]
-				},
-				{
-					"paths": ["/home/winstonallo/mastery/ft_ssl"]
-				},
-				{
-					"paths": ["/home/winstonallo/mastery/kfs"]
-				},
-				{
-					"paths": ["/home/winstonallo/mastery/taskmaster"]
-				},
-				{
-					"paths": ["/home/winstonallo/ostep-homework"]
-				},
-				{
-					"paths": ["/home/winstonallo/qms"]
-				},
-				{
-					"paths": ["/home/winstonallo/qms/src/wasm"]
-				},
-				{
-					"paths": ["/home/winstonallo/rust"]
-				},
-				{
-					"paths": ["/home/winstonallo/sha3"]
-				},
-				{
-					"paths": ["/home/winstonallo/sha3/wasm/wasm-rs"]
-				},
-				{
-					"paths": ["/home/winstonallo/uv"]
-				},
-				{
-					"paths": ["/home/winstonallo/woody-woodpacker"]
-				}
-			]
-		}
-	],
+	"ssh_connections": [],
 	"diagnostics": {
 		"button": true,
 		"include_warnings": true,
