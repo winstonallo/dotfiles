@@ -49,9 +49,6 @@
 		"C": ["c", "h"]
 	},
 	"languages": {
-		"TypeScript": {
-			"language_servers": ["eslint"]
-		},
 		"C": {
 			"tab_size": 4,
 			"formatter": {
@@ -76,9 +73,12 @@
 		"JavaScript": {
 			"hard_tabs": true,
 			"format_on_save": "on"
+		},
+		"TypeScript": {
+			"hard_tabs" true,
 		}
 	},
-	"hard_tabs": true,
+	"hard_tabs": false,
 	"vim_mode": true,
 	"ui_font_size": 13,
 	"buffer_font_size": 12,
