@@ -14,6 +14,8 @@ source $ZSH/oh-my-zsh.sh
 
 alias k=kubectl
 
+git config --global user.name "Arthur Bied-Charreton"
+git config --global user.email "arthur@biedcharreton.com"
 git config --global user.signingkey ~/.ssh/id_ed25519
 git config --global commit.gpgsign true
 git config --global gpg.format ssh
