@@ -1,90 +1,119 @@
 {
-	"features": {
-		"edit_prediction_provider": "none"
-	},
-	"collaboration_panel": {
-		"dock": "right"
-	},
-	"outline_panel": {
-		"dock": "right"
-	},
-	"git_panel": {
-		"dock": "right"
-	},
-	"project_panel": {
-		"dock": "right"
-	},
-	"ssh_connections": [],
-	"diagnostics": {
-		"button": true,
-		"include_warnings": true,
-		"inline": {
-			"enabled": true,
-			"update_debounce_ms": 150,
-			"padding": 4,
-			"min_column": 0
-		}
-	},
-	"lsp": {
-		"rust-analyzer": {
-			"binary": {
-				"ignore_system_version": false
-			},
-			"enable_lsp_tasks": true,
-			"initialization_options": {
-				"checkOnSave": true
-			}
-		}
-	},
-	"tab_size": 4,
-	"autosave": "on_focus_change",
-	"agent": {
-		"always_allow_tool_actions": true,
-		"default_profile": "ask",
-		"inline_assistant_model": null,
-		"enabled": true
-	},
-	"format_on_save": "on",
-	"file_types": {
-		"C": ["c", "h"]
-	},
-	"languages": {
-		"C": {
-			"tab_size": 4,
-			"formatter": {
-				"external": {
-					"command": "clang-format",
-					"arguments": [
-						"--style=file",
-						"--assume-filename={buffer_path}"
-					]
-				}
-			},
-			"format_on_save": "on"
-		},
-
-		"PHP": {
-			"hard_tabs": true
-		},
-		"CSS": {
-			"hard_tabs": true,
-			"format_on_save": "off"
-		},
-		"JavaScript": {
-			"hard_tabs": true,
-			"format_on_save": "on"
-		},
-		"TypeScript": {
-			"hard_tabs" true,
-		}
-	},
-	"hard_tabs": false,
-	"vim_mode": true,
-	"ui_font_size": 13,
-	"buffer_font_size": 12,
-	"theme": {
-		"mode": "system",
-		"light": "One Light",
-		"dark": "One Dark"
-	}
+    "features": {
+        "edit_prediction_provider": "none"
+    },
+    "collaboration_panel": {
+        "dock": "right"
+    },
+    "outline_panel": {
+        "dock": "right"
+    },
+    "git_panel": {
+        "dock": "right"
+    },
+    "project_panel": {
+        "dock": "right"
+    },
+    "ssh_connections": []
+    "diagnostics": {
+        "button": true,
+        "include_warnings": true,
+        "inline": {
+            "enabled": true,
+            "update_debounce_ms": 50,
+            "padding": 4,
+            "min_column": 0
+        }
+    },
+    "lsp": {
+        "rust-analyzer": {
+            "binary": {
+                "ignore_system_version": false
+            },
+            "enable_lsp_tasks": true,
+            "initialization_options": {
+                "checkOnSave": true
+            }
+        },
+        "ruff": {
+            "initialization_options": {
+                "settings": {
+                    "lineLength": 160
+                }
+            }
+        },
+        "basedpyright": {
+            "settings": {
+                "analysis": {
+                    "pythonVersion": "3.14"
+                }
+            }
+        }
+    },
+    "tab_size": 4,
+    "autosave": "on_focus_change",
+    "agent": {
+        "always_allow_tool_actions": true,
+        "default_profile": "ask",
+        "inline_assistant_model": null,
+        "enabled": true
+    },
+    "format_on_save": "on",
+    "file_types": {
+        "C": ["c", "h"]
+    },
+    "languages": {
+        "Make": {
+            "hard_tabs": true
+        },
+        "Python": {
+            "language_servers": ["basedpyright", "ruff"],
+            "format_on_save": "on",
+            "formatter": [
+                {
+                    "language_server": { "name": "ruff" }
+                }
+            ]
+        },
+        "C": {
+            "tab_size": 4,
+            "formatter": {
+                "external": {
+                    "command": "clang-format",
+                    "arguments": [
+                        "--style=file",
+                        "--assume-filename={buffer_path}"
+                    ]
+                }
+            },
+            "format_on_save": "off"
+        },
+        "PHP": {
+            "hard_tabs": true
+        },
+        "CSS": {
+            "hard_tabs": true,
+            "format_on_save": "off"
+        },
+        "JavaScript": {
+            "hard_tabs": true,
+            "format_on_save": "on"
+        },
+        "Rust": {
+            "hard_tabs": false,
+            "format_on_save": "on"
+        },
+        "YAML": {
+            "hard_tabs": false
+        }
+    },
+    "hard_tabs": false,
+    "vim_mode": true,
+    "ui_font_size": 13,
+    "buffer_font_size": 12,
+    "theme": {
+        "mode": "system",
+        "light": "One Light",
+        "dark": "One Dark"
+    }
 }
