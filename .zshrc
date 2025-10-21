@@ -22,3 +22,5 @@ git config --global gpg.format ssh
 
 export UID=$(id -u $USER)
 export GID=$(id -g $USER)
+
+alias i386-elf-ld=ld
