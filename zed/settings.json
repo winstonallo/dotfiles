@@ -14,7 +14,7 @@
     "project_panel": {
         "dock": "right"
     },
-    "ssh_connections": []
+    "ssh_connections": [],
     "diagnostics": {
         "button": true,
         "include_warnings": true,
