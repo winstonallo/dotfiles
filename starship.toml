@@ -1,0 +1,59 @@
+add_newline = false
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Which is equivalent to
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$directory\
+$vcsh\
+$fossil_branch\
+$fossil_metrics\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$docker_context\
+$c\
+$cmake\
+$golang\
+$haskell\
+$nodejs\
+$ocaml\
+$perl\
+$python\
+$rust\
+$typst\
+$vlang\
+$zig\
+$buf\
+$nix_shell\
+$memory_usage\
+$direnv\
+$env_var\
+$sudo\
+$cmd_duration\
+$jobs\
+$container\
+$character"""
+
+[character]
+success_symbol = '[>](bold green)'
+error_symbol = '[x](bold red)'
+
+[git_branch]
+format = 'on [$branch(:$remote_branch)]($style) '
+
+[directory]
+truncate_to_repo = true
+
+[username]
+format = '[$user]($style)'
+style_user = 'bold blue'
+
+[hostname]
+format = '[$ssh_symbol$hostname]($style) '
+ssh_symbol = '@'
+style = 'bold blue'
