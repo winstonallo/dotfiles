@@ -24,3 +24,6 @@ export UID=$(id -u $USER)
 export GID=$(id -g $USER)
 
 alias i386-elf-ld=ld
+alias cat="bat"
+
+eval "$(starship init zsh)"
