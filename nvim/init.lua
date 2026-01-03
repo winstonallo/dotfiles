@@ -53,8 +53,6 @@ end)
 
 vim.cmd [[colorscheme github_dark]]
 
-local lspconfig = require('lspconfig')
-
 local on_attach = function(client, bufnr)
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -66,7 +64,9 @@ local on_attach = function(client, bufnr)
   end
 end
 
-lspconfig.rust_analyzer.setup({
+vim.lsp.config('rust_analyzer', {
+    cmd = {'rust-analyzer'},
+    root_markers = {'Cargo.toml', '.git'},
     on_attach = on_attach,
     settings = {
         ["rust-analyzer"] = {
@@ -75,28 +75,10 @@ lspconfig.rust_analyzer.setup({
             },
             checkOnSave = {
                 command = "clippy",
-            },
-        },
-    },
+            }
+        }
+    }
 })
-
-lspconfig.gopls.setup({
-    on_attach = on_attach,
-    settings = {
-        gopls = {
-      -- Enables auto-fix for missing imports
-        gofumpt = true,   -- Uses gofumpt for formatting
-        analyses = {
-            unusedparams = true,  -- Checks for unused parameters
-        },
-        staticcheck = true, -- Enable additional static analysis checks
-        completeUnimported = true, -- Auto-complete unimported packages
-        usePlaceholders = true, -- Add placeholders for function arguments
-        },
-    },
-})
-
-lspconfig.pyright.setup{}
 local cmp = require'cmp'
 
 cmp.setup({
