@@ -27,3 +27,7 @@ alias i386-elf-ld=ld
 alias cat="bat"
 
 eval "$(starship init zsh)"
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+export EDITOR="nvim"
