@@ -36,4 +36,16 @@ set mail_check_stats
 
 set sort=reverse-date-received
 
-
+# Sad attempt at highlighting git diffs, it works okay but also colors lines starting
+# with `-` outside of the diff red. It is not currently possible to interact with the 
+# content of the emails with Lua [1][2].
+#
+# [1] https://neomutt.org/feature/lua
+# [2] https://github.com/neomutt/neomutt/pull/4707
+color body cyan default "diff --git.*"
+color body cyan default "^index [a-f0-9].*"
+color body brightgreen default "^\-\-\- .*"
+color body brightgreen default "^[\+]{3} .*"
+color body brightgreen default "^[\+][^\+]+.*"
+color body red default "^\-[^\-]+.*"
+color body red default "^\-\-\-.*"
