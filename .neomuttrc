@@ -1,0 +1,40 @@
+# Set to `no` for local bridges (like Proton Bridge), `yes`
+# for actual SMTP/IMAP servers (smtp.gmail.com, etc.).
+set ssl_starttls = no
+set ssl_force_tls = no
+
+set imap_user = "user@example.com"
+
+# Leaving blank to avoid silent failure.
+set imap_pass = 
+
+# Use `smtps` for gmail smtp server.
+set smtp_url = "smtp://$imap_user@<IP | domain (smtp.xxx)>:<port>/"
+set smtp_pass = "$imap_pass"
+set from = "$imap_user"
+set realname = "Arthur Bied-Charreton"
+set folder = "imap://$imap_user@<IP | domain (imap.xxx)>:<port>"
+
+set spoolfile = "+INBOX"
+set postponed = "+Drafts"
+set record="+Sent"
+set header_cache = "~/neomutt/cache/$imap_user/headers"
+set message_cachedir = "~/neomutt/cache/$imap_user/bodies"
+
+set imap_check_subscribed = yes
+set imap_list_subscribed = yes
+set mail_check = 90
+unset imap_passive
+
+set sidebar_visible
+set sidebar_format = "%B%<F? [%F]>%* %<N?%N/>%S"
+
+bind index,pager \Cj sidebar-next
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cl sidebar-open
+
+set mail_check_stats
+
+set sort=reverse-date-received
+
+
