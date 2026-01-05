@@ -29,9 +29,8 @@ unset imap_passive
 set sidebar_visible
 set sidebar_format = "%B%<F? [%F]>%* %<N?%N/>%S"
 
-bind index,pager \Cj sidebar-next
-bind index,pager \Ck sidebar-prev
-bind index,pager \Cl sidebar-open
+macro index,pager \Cj "<sidebar-next><sidebar-open>" "Go to next sidebar folder"
+macro index,pager \Ck "<sidebar-prev><sidebar-open>" "Go to previous sidebar folder"
 
 set mail_check_stats
 

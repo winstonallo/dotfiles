@@ -14,7 +14,20 @@
     "project_panel": {
         "dock": "right"
     },
-    "ssh_connections": [],
+    "ssh_connections": [
+        {
+            "host": "dev.winstonallo.sh",
+            "username": "winstonallo",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/home/winstonallo/proxmox"
+                    ]
+                }
+            ]
+        }
+    ],
     "diagnostics": {
         "button": true,
         "include_warnings": true,
