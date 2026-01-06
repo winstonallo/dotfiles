@@ -6,5 +6,5 @@ cursor-style-blink = false
 #
 # [1] https://ghostty.org/docs/help/terminfo#ssh
 # [2] https://github.com/ghostty-org/ghostty/discussions/5012#discussioncomment-14841037
-shell-integration-features = ssh-terminfo
-shell-integration-features = ssh-env
+shell-integration-features = ssh-terminfo,ssh-env
+
