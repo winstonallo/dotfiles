@@ -24,6 +24,11 @@
                     "paths": [
                         "/home/winstonallo/proxmox"
                     ]
+                },
+                {
+                    "paths": [
+                        "/home/winstonallo/proxmox-backup"
+                    ]
                 }
             ]
         }
@@ -66,6 +71,10 @@
     "tab_size": 4,
     "autosave": "on_focus_change",
     "agent": {
+        "default_model": {
+            "provider": "anthropic",
+            "model": "claude-sonnet-4-5-latest"
+        },
         "always_allow_tool_actions": true,
         "default_profile": "ask",
         "inline_assistant_model": null,
@@ -73,18 +82,26 @@
     },
     "format_on_save": "on",
     "file_types": {
-        "C": ["c", "h"]
+        "C": [
+            "c",
+            "h"
+        ]
     },
     "languages": {
         "Make": {
             "hard_tabs": true
         },
         "Python": {
-            "language_servers": ["basedpyright", "ruff"],
+            "language_servers": [
+                "basedpyright",
+                "ruff"
+            ],
             "format_on_save": "on",
             "formatter": [
                 {
-                    "language_server": { "name": "ruff" }
+                    "language_server": {
+                        "name": "ruff"
+                    }
                 }
             ]
         },
