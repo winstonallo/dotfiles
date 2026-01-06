@@ -33,3 +33,6 @@ export PATH="$PATH:/opt/homebrew/bin/"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 
 export EDITOR="nvim"
+
+# Ghostty uses this to find its configuration on MacOS.
+export XDG_CONFIG_HOME="$HOME"
