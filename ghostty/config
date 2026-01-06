@@ -1,2 +1,10 @@
 cursor-style = block
 cursor-style-blink = false
+
+# Other machines will likely not have Ghostty's terminfo entry
+# by default [1][2], this is the current workaround.
+#
+# [1] https://ghostty.org/docs/help/terminfo#ssh
+# [2] https://github.com/ghostty-org/ghostty/discussions/5012#discussioncomment-14841037
+shell-integration-features = ssh-terminfo
+shell-integration-features = ssh-env
