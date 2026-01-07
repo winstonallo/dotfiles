@@ -1,0 +1,16 @@
+[
+    {
+        "context": "Editor",
+        "bindings": {
+            "super-[": "pane::ActivatePreviousItem",
+            "super-]": "pane::ActivateNextItem",
+        },
+    },
+    {
+        "context": "Terminal",
+        "bindings": {
+            "super-[": "workspace::ActivateNextPane",
+            "super-]": "workspace::ActivatePreviousPane",
+        },
+    },
+]
