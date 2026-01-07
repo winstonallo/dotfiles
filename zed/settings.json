@@ -1,20 +1,32 @@
 {
     "features": {
-        "edit_prediction_provider": "none"
+        "edit_prediction_provider": "none",
     },
     "collaboration_panel": {
-        "dock": "right"
+        "dock": "right",
     },
     "outline_panel": {
-        "dock": "right"
+        "dock": "right",
     },
     "git_panel": {
-        "dock": "right"
+        "dock": "right",
     },
     "project_panel": {
-        "dock": "right"
+        "dock": "right",
     },
-    "ssh_connections": [],
+    "ssh_connections": [
+        {
+            "host": "dev.winstonallo.sh",
+            "username": "winstonallo",
+            "args": [],
+            "projects": [
+                {
+                    "paths": ["/home/winstonallo/proxmox-backup"],
+                },
+            ],
+        },
+    ],
+
     "diagnostics": {
         "button": true,
         "include_warnings": true,
@@ -22,70 +34,64 @@
             "enabled": true,
             "update_debounce_ms": 50,
             "padding": 4,
-            "min_column": 0
-        }
+            "min_column": 0,
+        },
     },
     "lsp": {
         "rust-analyzer": {
             "binary": {
-                "ignore_system_version": false
+                "ignore_system_version": false,
             },
             "enable_lsp_tasks": true,
             "initialization_options": {
-                "checkOnSave": true
-            }
+                "checkOnSave": true,
+            },
         },
         "ruff": {
             "initialization_options": {
                 "settings": {
-                    "lineLength": 160
-                }
-            }
+                    "lineLength": 160,
+                },
+            },
         },
         "basedpyright": {
             "settings": {
                 "analysis": {
-                    "pythonVersion": "3.14"
-                }
-            }
-        }
+                    "pythonVersion": "3.14",
+                },
+            },
+        },
     },
     "tab_size": 4,
     "autosave": "on_focus_change",
     "agent": {
         "default_model": {
             "provider": "anthropic",
-            "model": "claude-sonnet-4-5-latest"
+            "model": "claude-sonnet-4-5-latest",
         },
         "always_allow_tool_actions": true,
         "default_profile": "ask",
         "inline_assistant_model": null,
-        "enabled": true
+        "enabled": true,
     },
     "format_on_save": "on",
     "file_types": {
-        "C": [
-            "c",
-            "h"
-        ]
+        "C": ["c", "h"],
     },
     "languages": {
         "Make": {
-            "hard_tabs": true
+            "hard_tabs": true,
         },
         "Python": {
-            "language_servers": [
-                "basedpyright",
-                "ruff"
-            ],
+            "language_servers": ["basedpyright", "ruff"],
             "format_on_save": "on",
             "formatter": [
                 {
                     "language_server": {
-                        "name": "ruff"
-                    }
-                }
-            ]
+                        "name": "ruff",
+                    },
+                },
+            ],
         },
         "C": {
             "tab_size": 4,
@@ -94,30 +100,30 @@
                     "command": "clang-format",
                     "arguments": [
                         "--style=file",
-                        "--assume-filename={buffer_path}"
-                    ]
-                }
+                        "--assume-filename={buffer_path}",
+                    ],
+                },
             },
-            "format_on_save": "off"
+            "format_on_save": "off",
         },
         "PHP": {
-            "hard_tabs": true
+            "hard_tabs": true,
         },
         "CSS": {
             "hard_tabs": true,
-            "format_on_save": "off"
+            "format_on_save": "off",
         },
         "JavaScript": {
             "hard_tabs": true,
-            "format_on_save": "on"
+            "format_on_save": "on",
         },
         "Rust": {
             "hard_tabs": false,
-            "format_on_save": "on"
+            "format_on_save": "on",
         },
         "YAML": {
-            "hard_tabs": false
-        }
+            "hard_tabs": false,
+        },
     },
     "hard_tabs": false,
     "vim_mode": true,
@@ -126,6 +132,6 @@
     "theme": {
         "mode": "system",
         "light": "One Light",
-        "dark": "One Dark"
-    }
+        "dark": "One Dark",
+    },
 }
