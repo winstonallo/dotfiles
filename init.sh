@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install -y neovim curl git zsh
+sudo apt install -y curl git zsh
 
 if [ ! -f ~/.ssh/id_ed25519 ]; then
   ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ""
@@ -10,7 +10,6 @@ if [ ! -f ~/.ssh/id_ed25519 ]; then
 else
   echo "SSH key already exists."
 fi
-
 
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
@@ -35,3 +34,10 @@ else
   rm -f ~/.zshrc
   ln -s ~/dotfiles/.zshrc ~/.zshrc
 fi
+
+curl -sS https://starship.rs/install.sh | sh
+
+# .zshrc already contains the '$PATH' entry
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim-linux-x86_64
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
