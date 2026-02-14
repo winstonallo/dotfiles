@@ -14,7 +14,43 @@
     "project_panel": {
         "dock": "right",
     },
-    "ssh_connections": [],
+    "ssh_connections": [
+        {
+            "host": "dev.winstonallo.sh",
+            "username": "winstonallo",
+            "args": [],
+            "projects": [
+                {
+                    "paths": ["/home/winstonallo/proxmox"],
+                },
+                {
+                    "paths": ["/home/winstonallo/proxmox/proxmox-backup"],
+                },
+                {
+                    "paths": ["/home/winstonallo/pve-common"],
+                },
+                {
+                    "paths": ["/home/winstonallo/pve-network"],
+                },
+                {
+                    "paths": ["/home/winstonallo/pve-storage"],
+                },
+            ],
+        },
+        {
+            "host": "pve.winstonallo.sh",
+            "username": "root",
+            "args": [],
+            "projects": [
+                {
+                    "paths": ["/root/proxmox/pve-cluster"],
+                },
+                {
+                    "paths": ["/root/pve-network"],
+                },
+            ],
+        },
+    ],
 
     "diagnostics": {
         "button": true,
@@ -106,6 +142,18 @@
             "hard_tabs": true,
             "format_on_save": "on",
         },
+        "Perl": {
+            "formatter": {
+                "external": {
+                    "command": "make tidy",
+                },
+            },
+            "use_on_type_format": false,
+            "remove_trailing_whitespace_on_save": false,
+            "ensure_final_newline_on_save": false,
+            "format_on_save": "off",
+        },
+
         "Rust": {
             "hard_tabs": false,
             "format_on_save": "on",
@@ -117,7 +165,7 @@
     "hard_tabs": false,
     "vim_mode": true,
     "ui_font_size": 13,
-    "buffer_font_size": 12,
+    "buffer_font_size": 10,
     "theme": {
         "mode": "system",
         "light": "One Light",

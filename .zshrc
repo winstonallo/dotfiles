@@ -31,8 +31,12 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:/opt/homebrew/bin/"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.platformio/penv/bin/"
 
 export EDITOR="nvim"
 
 # Ghostty uses this to find its configuration on MacOS.
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# oh-my-zsh glo alias is git log --one-line 
+alias glo="git log"

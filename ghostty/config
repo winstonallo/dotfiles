@@ -8,3 +8,4 @@ cursor-style-blink = false
 # [2] https://github.com/ghostty-org/ghostty/discussions/5012#discussioncomment-14841037
 shell-integration-features = ssh-terminfo,ssh-env
 
+keybind = shift+enter=text:\x1b\r
