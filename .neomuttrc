@@ -1,7 +1,5 @@
-# Set to `no` for local bridges (like Proton Bridge), `yes`
-# for actual SMTP/IMAP servers (smtp.gmail.com, etc.).
-set ssl_starttls = no
-set ssl_force_tls = no
+set ssl_starttls = yes
+set ssl_force_tls = yes
 
 set imap_user = "user@example.com"
 
@@ -37,7 +35,7 @@ set mail_check_stats
 set sort=reverse-date-received
 
 # Sad attempt at highlighting git diffs, it works okay but also colors lines starting
-# with `-` outside of the diff red. It is not currently possible to interact with the 
+# with `-` outside of the diff red. It is not currently possible to interact with the
 # content of the emails with Lua [1][2].
 #
 # [1] https://neomutt.org/feature/lua
