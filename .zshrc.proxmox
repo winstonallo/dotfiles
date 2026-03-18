@@ -15,7 +15,7 @@ source $ZSH/oh-my-zsh.sh
 alias k=kubectl
 
 git config --global user.name "Arthur Bied-Charreton"
-git config --global user.email "arthur@biedcharreton.com"
+git config --global user.email "a.bied-charreton@proxmox.com"
 git config --global user.signingkey ~/.ssh/id_ed25519
 git config --global commit.gpgsign true
 git config --global gpg.format ssh
@@ -23,7 +23,10 @@ git config --global gpg.format ssh
 export UID=$(id -u $USER)
 export GID=$(id -g $USER)
 
-alias cat="bat"
+alias glo="git log"
+alias gc="git commit --signoff"
+alias gc!="git commit --signoff --amend"
+alias apply="b4 shazam -t"
 
 eval "$(starship init zsh)"
 
@@ -31,12 +34,31 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:/opt/homebrew/bin/"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.platformio/penv/bin/"
+export PATH="$PATH:/usr/sbin"
+export PATH="$PATH:/home/$USER/.cargo/bin"
 
 export EDITOR="nvim"
 
 # Ghostty uses this to find its configuration on MacOS.
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# oh-my-zsh glo alias is git log --one-line 
-alias glo="git log"
+
+if [ ! -d "/zfs/enc/Downloads" ]; then
+    echo "mounting rpool/enc at /zfs/enc..."
+    sudo zfs mount -l rpool/enc
+    if [ $? -eq 0 ]; then
+        echo "mounted rpool/enc"
+    else
+        echo "failed to mount rpool/enc"
+    fi
+fi
+
+autoload -U compinit
+compinit
+source <(jj util completion zsh)
+
+PATH="/home/abied-charreton/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/abied-charreton/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/abied-charreton/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/abied-charreton/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/abied-charreton/perl5"; export PERL_MM_OPT;
