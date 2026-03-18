@@ -24,8 +24,8 @@ export UID=$(id -u $USER)
 export GID=$(id -g $USER)
 
 alias glo="git log"
-alias gc="git commit --signoff"
-alias gc!="git commit --signoff --amend"
+alias gc="git commit --signoff --verbose"
+alias gc!="git commit --signoff --amend --verbose"
 alias apply="b4 shazam -t"
 alias gse="git send-email --suppress-cc=all"
 

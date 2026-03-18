@@ -1,23 +1,21 @@
 set ssl_starttls = yes
 set ssl_force_tls = yes
 
-set imap_user = "user@example.com"
+set imap_user = "a.bied-charreton@proxmox.com"
 
-# Leaving blank to avoid silent failure.
-set imap_pass = 
+set imap_pass = ""
 
-# Use `smtps` for gmail smtp server.
-set smtp_url = "smtp://$imap_user@<IP | domain (smtp.xxx)>:<port>/"
+set smtp_url = ""
 set smtp_pass = "$imap_pass"
-set from = "$imap_user"
+set from = "Arthur Bied-Charreton <a.bied-charreton@proxmox.com>"
 set realname = "Arthur Bied-Charreton"
-set folder = "imap://$imap_user@<IP | domain (imap.xxx)>:<port>"
+set folder = ""
 
 set spoolfile = "+INBOX"
 set postponed = "+Drafts"
 set record="+Sent"
-set header_cache = "~/neomutt/cache/$imap_user/headers"
-set message_cachedir = "~/neomutt/cache/$imap_user/bodies"
+set header_cache = "~/Mail/cache/a.bied-charreton_proxmox.com/headers"
+set message_cachedir = "~/Mail/cache/a.bied-charreton_proxmox.com/bodies"
 
 set imap_check_subscribed = yes
 set imap_list_subscribed = yes
