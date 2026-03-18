@@ -27,6 +27,7 @@ alias glo="git log"
 alias gc="git commit --signoff"
 alias gc!="git commit --signoff --amend"
 alias apply="b4 shazam -t"
+alias gse="git send-email --suppress-cc=all"
 
 eval "$(starship init zsh)"
 
