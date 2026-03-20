@@ -13,4 +13,10 @@
             "super-]": "workspace::ActivatePreviousPane",
         },
     },
+    {
+        "context": "Terminal",
+        "bindings": {
+            "ctrl-shift-o": "pane::SplitRight",
+        },
+    },
 ]
