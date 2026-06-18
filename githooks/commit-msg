@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+
+from itertools import takewhile
+import sys
+import requests
+
+def exists(bugno: str):
+    r = requests.get(f"https://bugzilla.proxmox.com/rest/bug/{bugno}", timeout=10)
+    data = r.json()
+
+    if data.get('error'):
+        code = data.get("code")
+        return code == 102
+
+    return bool(data.get("bugs"))
+
+def get_url(msg: str) -> str | None:
+    if not msg.startswith("fix #"):
+        return None
+
+    bugno = "".join([x for x in takewhile(lambda x: x.isdigit(), msg[5:])])
+    if not bugno.isdigit():
+        return None
+
+    if not exists(bugno):
+        return None
+
+    return f"https://bugzilla.proxmox.com/show_bug.cgi?id={bugno}"
+
+def write(msg: str, msgfile: str, url: str):
+    written = False
+    seen = {}
+    trailers = ["co-authored-by", "originally-by", "signed-off-by"]
+
+    with open(msgfile, "w") as f:
+        for line in msg.splitlines():
+
+            if seen.get(line):
+                continue
+
+            if line == f"Fixes: {url}":
+                continue
+
+            ll = line.lower()
+            if any(ll.startswith(x) for x in trailers):
+                seen[line] = True
+
+                if not written:
+                    _ = f.write(f"Fixes: {url}\n")
+                    written = True
+
+            _ = f.write(f"{line}\n")
+
+
+def main():
+    msgfile = sys.argv[1]
+
+    with open(msgfile, "r") as f:
+        msg = f.read()
+
+    url = get_url(msg)
+    if not url:
+        sys.exit(0)
+
+    write(msg, msgfile, url)
+
+if __name__ == "__main__":
+    main()
