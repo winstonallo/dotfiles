@@ -12,8 +12,6 @@ zstyle ':omz:plugins:alias-finder' cheaper yes
 
 source $ZSH/oh-my-zsh.sh
 
-alias k=kubectl
-
 git config --global user.name "Arthur Bied-Charreton"
 git config --global user.email "a.bied-charreton@proxmox.com"
 git config --global user.signingkey ~/.ssh/id_ed25519
