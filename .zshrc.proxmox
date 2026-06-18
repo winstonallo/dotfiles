@@ -26,8 +26,10 @@ export GID=$(id -g $USER)
 alias glo="git log"
 alias gc="git commit --signoff --verbose"
 alias gc!="git commit --signoff --amend --verbose"
-alias apply="b4 shazam -t"
 alias gse="git send-email --suppress-cc=all"
+alias apply="b4 shazam -t"
+alias clip="xclip -selection clipboard"
+alias fzed='zed "$(fzf -i)"'
 
 eval "$(starship init zsh)"
 
@@ -44,8 +46,6 @@ export EDITOR="nvim"
 # Ghostty uses this to find its configuration on MacOS.
 export XDG_CONFIG_HOME="$HOME/.config"
 
-
-
 autoload -U compinit
 compinit
 source <(jj util completion zsh)
@@ -55,6 +55,3 @@ PERL5LIB="/home/abied-charreton/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; expor
 PERL_LOCAL_LIB_ROOT="/home/abied-charreton/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/abied-charreton/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/abied-charreton/perl5"; export PERL_MM_OPT;
-
-alias clip="xclip -selection clipboard"
-alias fzed='zed "$(fzf -i)"'
