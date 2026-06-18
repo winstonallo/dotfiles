@@ -45,15 +45,6 @@ export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 
-if [ ! -d "/zfs/enc/Downloads" ]; then
-    echo "mounting rpool/enc at /zfs/enc..."
-    sudo zfs mount -l rpool/enc
-    if [ $? -eq 0 ]; then
-        echo "mounted rpool/enc"
-    else
-        echo "failed to mount rpool/enc"
-    fi
-fi
 
 autoload -U compinit
 compinit
