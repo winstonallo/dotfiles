@@ -30,6 +30,10 @@ alias apply="b4 shazam -t"
 alias clip="xclip -selection clipboard"
 alias fzed='zed "$(fzf -i)"'
 
+function gpsu {
+    git push --set-upstream "$1" "$(git_current_branch)"
+}
+
 eval "$(starship init zsh)"
 
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
