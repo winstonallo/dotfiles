@@ -1,0 +1,37 @@
+[user]
+	name = Arthur Bied-Charreton
+	email = a.bied-charreton@proxmox.com
+	signingkey = /home/abied-charreton/.ssh/id_ed25519
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	format = ssh
+
+[sendemail]
+    suppresscc = all
+
+[format]
+    signoff = true
+
+[tag]
+    gpgsign = true
+
+[core]
+    pager = delta
+    excludesfile = /home/abied-charreton/.gitignore
+    hookspath = /home/abied-charreton/githooks
+
+[interactive]
+    difffilter = delta --color-only
+
+[delta]
+    navigate = true
+    dark = true
+
+[merge]
+    conflictstyle = zdiff3
+
+[advice]
+    addignoredfile = false
