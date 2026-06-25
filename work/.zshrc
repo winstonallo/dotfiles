@@ -40,6 +40,8 @@ function gpsu {
 
 eval "$(starship init zsh)"
 
+source <(fzf --zsh)
+
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:/opt/homebrew/bin/"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
