@@ -21,7 +21,7 @@
 [core]
     pager = delta
     excludesfile = /home/abied-charreton/.gitignore
-    hookspath = /home/abied-charreton/githooks
+    hookspath = /home/abied-charreton/.githooks
 
 [interactive]
     difffilter = delta --color-only
