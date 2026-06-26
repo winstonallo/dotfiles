@@ -4,6 +4,8 @@ ZSH_THEME="robbyrussell"
 
 plugins=(git python git-auto-fetch rust alias-finder ssh globalias)
 
+GLOBALIAS_FILTER_VALUES=(grep ls)
+
 # Enables autoload of alias-finder, disabled by default
 zstyle ':omz:plugins:alias-finder' autoload yes
 zstyle ':omz:plugins:alias-finder' longer yes
