@@ -12,16 +12,13 @@ zstyle ':omz:plugins:alias-finder' longer yes
 zstyle ':omz:plugins:alias-finder' exact yes
 zstyle ':omz:plugins:alias-finder' cheaper yes
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 git config --global user.name "Arthur Bied-Charreton"
 git config --global user.email "a.bied-charreton@proxmox.com"
 git config --global user.signingkey ~/.ssh/id_ed25519
 git config --global commit.gpgsign true
 git config --global gpg.format ssh
-
-export UID=$(id -u $USER)
-export GID=$(id -g $USER)
 
 alias glo="git log"
 alias gc="git commit --signoff --verbose"
@@ -44,13 +41,11 @@ eval "$(starship init zsh)"
 
 source <(fzf --zsh)
 
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-export PATH="$PATH:/opt/homebrew/bin/"
-export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:/usr/sbin"
-export PATH="$PATH:/home/$USER/.cargo/bin"
-export PATH="$PATH:/home/$USER/.local/bin"
+PATH="$PATH:/opt/nvim-linux-x86_64/bin"; export PATH;
+PATH="$PATH:$HOME/.local/bin"; export PATH;
+PATH="$PATH:/usr/sbin"; export PATH;
+PATH="$PATH:/home/$USER/.cargo/bin"; export PATH;
+PATH="$PATH:/home/$USER/.local/bin"; export PATH;
 
 export EDITOR="nvim"
 
