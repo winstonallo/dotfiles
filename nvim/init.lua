@@ -14,6 +14,15 @@ local packer_bootstrap = ensure_packer()
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.clipboard = "unnamedplus"
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "diff",
+  callback = function()
+    vim.opt_local.textwidth = 72
+    vim.opt_local.colorcolumn = "+1"  -- highlights the column just past textwidth
+  end,
+})
 
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
