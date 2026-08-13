@@ -54,4 +54,16 @@
             "shift-f3": "search::SelectPreviousMatch",
         },
     },
+    {
+        "context": "Editor",
+        "unbind": {
+            "ctrl-shift-j": "editor::JoinLines",
+        },
+    },
+    {
+        "context": "Editor",
+        "unbind": {
+            "ctrl-shift-k": "editor::DeleteLine",
+        },
+    },
 ]
