@@ -30,4 +30,28 @@
             "super-]": "pane::GoForward",
         },
     },
+    {
+        "context": "Pane",
+        "bindings": {
+            "ctrl-shift-j": "search::SelectNextMatch",
+        },
+    },
+    {
+        "context": "Pane",
+        "unbind": {
+            "f3": "search::SelectNextMatch",
+        },
+    },
+    {
+        "context": "Pane",
+        "bindings": {
+            "ctrl-shift-k": "search::SelectPreviousMatch",
+        },
+    },
+    {
+        "context": "Pane",
+        "unbind": {
+            "shift-f3": "search::SelectPreviousMatch",
+        },
+    },
 ]
