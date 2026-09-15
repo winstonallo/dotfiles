@@ -47,6 +47,8 @@ PATH="$PATH:$HOME/.local/bin"; export PATH;
 PATH="$PATH:/usr/sbin"; export PATH;
 PATH="$PATH:/home/$USER/.cargo/bin"; export PATH;
 PATH="$PATH:/home/$USER/.local/bin"; export PATH;
+PATH=$PATH:/usr/local/go/bin; export PATH
+PATH="$PATH:$(go env GOPATH)/bin"; export PATH
 
 export EDITOR="nvim"
 
