@@ -10,23 +10,17 @@ def exists(bugno: int) -> bool:
     r = requests.get(f"https://bugzilla.proxmox.com/rest/bug/{bugno}", timeout=10)
     data = r.json()
 
-    if data.get("error"):
-        code = data.get("code")
-        return code == 102
-
+    if data.get("error"): return data.get("code") == 102
     return bool(data.get("bugs"))
 
 
 def get_url(msg: str) -> str | None:
-    if not msg.startswith("fix #"):
-        return None
+    prefix = next((p for p in ["fix #", "partially-fix #"] if msg.startswith(p)), None)
+    if not prefix: return None
+    idx = len(prefix)
 
-    bugno = "".join([x for x in takewhile(lambda x: x.isdigit(), msg[5:])])
-    if not bugno.isdigit():
-        return None
-
-    if not exists(int(bugno)):
-        return None
+    bugno = "".join([x for x in takewhile(lambda x: x.isdigit(), msg[idx:])])
+    if not bugno.isdigit() or not exists(int(bugno)): return None
 
     return f"https://bugzilla.proxmox.com/show_bug.cgi?id={bugno}"
 
@@ -35,21 +29,18 @@ def write(msg: str, msgfile: str, url: str):
     written = False
     seen = {}
     trailers = ["co-authored-by", "originally-by", "signed-off-by"]
+    link_line = f"Link: {url}"
 
     with open(msgfile, "w") as f:
         for line in msg.splitlines():
-            if seen.get(line):
-                continue
-
-            if line == f"Fixes: {url}":
-                continue
+            if seen.get(line) or line == link_line: continue
 
             ll = line.lower()
             if any(ll.startswith(x) for x in trailers):
                 seen[line] = True
 
                 if not written:
-                    _ = f.write(f"Fixes: {url}\n")
+                    _ = f.write(f"{link_line}\n")
                     written = True
 
             _ = f.write(f"{line}\n")
@@ -58,12 +49,12 @@ def write(msg: str, msgfile: str, url: str):
 def main():
     msgfile = sys.argv[1]
 
-    with open(msgfile, "r") as f:
-        msg = f.read()
+    with open(msgfile, "r") as f: msg = f.read()
 
     url = get_url(msg)
-    if not url:
-        sys.exit(0)
+    if not url: sys.exit(0)
+
+    print(f"found bug matching subject line at {url}, adding trailer")
 
     write(msg, msgfile, url)
 
