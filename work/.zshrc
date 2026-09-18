@@ -34,7 +34,7 @@ alias apply="b4 shazam -t"
 alias clip="xclip -selection clipboard"
 alias fzed='zed "$(fzf -i)"'
 
-function gpsu {
+function gpsu() {
     git push --set-upstream "$1" "$(git_current_branch)"
 }
 
