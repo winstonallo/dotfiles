@@ -38,6 +38,22 @@ function gpsu {
     git push --set-upstream "$1" "$(git_current_branch)"
 }
 
+function tmx() {
+    (( $# )) || { echo "usage: tmx host [host...]" >&2; return 2; }
+
+    local cmd=(tmux new-session)
+    local arg first=1
+    for arg in "$@"; do
+        (( first )) || cmd+=(';' split-window ';' select-layout tiled)
+        cmd+=(';' send-keys "ssh root@$arg" C-m)
+        first=0
+    done
+    cmd+=(';' select-layout tiled ';' setw synchronize-panes on)
+
+    printf '%q ' "${cmd[@]}"; printf '\n'   # drop this once it works
+    "${cmd[@]}"
+}
+
 eval "$(starship init zsh)"
 
 source <(fzf --zsh)
